@@ -1,4 +1,4 @@
-import { clientFactory } from '../src/client'
+import { makeCreateClient } from '../src/client'
 import { EventData } from '../src/types'
 import { URLS } from '../src/urls'
 
@@ -11,19 +11,21 @@ const options = {
 
 describe('Client', () => {
   it('creates client factory functions', () => {
-    const client = clientFactory(fetch)
-    expect(client).toBeTruthy()
+    const { createClient } = makeCreateClient(fetch)
+    expect(createClient).toBeTruthy()
   })
 
   it('returns clients', () => {
-    const makeClient = clientFactory(fetch)
-    const client = makeClient(options)
+    const { createClient } = makeCreateClient(fetch)
+    const client = createClient(options)
+
     expect(client).toHaveProperty('event')
   })
 
   it('calls event api url', () => {
-    const makeClient = clientFactory(fetch)
-    const client = makeClient(options)
+    const { createClient } = makeCreateClient(fetch)
+    const client = createClient(options)
+
     const data: EventData = {
       channel: 'test-channel',
       event: 'test-event',

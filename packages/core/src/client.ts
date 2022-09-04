@@ -10,8 +10,8 @@ export interface ClientOptions {
   project: string
 }
 
-export const clientFactory = (fetch: typeof global.fetch) => {
-  return function client (opts: ClientOptions): QuicklogClient {
+export const makeCreateClient = (fetch: typeof global.fetch) => {
+  function createClient (opts: ClientOptions): QuicklogClient {
 
     const headers = new Headers({
       'Content-Type': 'application/json',
@@ -30,4 +30,6 @@ export const clientFactory = (fetch: typeof global.fetch) => {
       event
     }
   }
+
+  return { createClient }
 }
