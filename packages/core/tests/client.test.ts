@@ -11,19 +11,19 @@ const options = {
 
 describe('Client', () => {
   it('creates client factory functions', () => {
-    const { createClient } = makeCreateClient(fetch)
+    const { createClient } = makeCreateClient({ fetch, Headers })
     expect(createClient).toBeTruthy()
   })
 
   it('returns clients', () => {
-    const { createClient } = makeCreateClient(fetch)
+    const { createClient } = makeCreateClient({ fetch, Headers })
     const client = createClient(options)
 
     expect(client).toHaveProperty('event')
   })
 
   it('calls event api url', () => {
-    const { createClient } = makeCreateClient(fetch)
+    const { createClient } = makeCreateClient({ fetch, Headers })
     const client = createClient(options)
 
     const data: EventData = {
@@ -35,8 +35,9 @@ describe('Client', () => {
 
     client.event(data)
 
-    expect(fetch).toBeCalled()
     const { lastCall } = fetch.mock
+
+    expect(fetch).toBeCalled()
     expect(lastCall[0]).toBe(URLS.event)
     expect(lastCall[1].headers.get('Content-Type')).toBe('application/json')
   })

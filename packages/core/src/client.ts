@@ -10,7 +10,12 @@ export interface ClientOptions {
   project: string
 }
 
-export const makeCreateClient = (fetch: typeof global.fetch) => {
+interface MakeCreateClientDeps {
+  fetch: typeof global.fetch
+  Headers: typeof global.Headers
+}
+
+export const makeCreateClient = ({ fetch, Headers }: MakeCreateClientDeps) => {
   function createClient (opts: ClientOptions): QuicklogClient {
 
     const headers = new Headers({
