@@ -3,6 +3,7 @@
   "display": "Default",
   "compilerOptions": {
     "composite": false,
+    "lib": ["DOM"],
     "declaration": true,
     "declarationMap": true,
     "esModuleInterop": true,
