@@ -33,6 +33,7 @@ const ql = createClient({
   token: 'your-token',
   project: 'your-project'
 });
+```
 
 #### Send event
 ```ts
