@@ -4,7 +4,7 @@
   <h4>This is the official client library for Quicklog.io</h4>
 </div>
 
-![Discord Shield](https://discordapp.com/api/guilds/1013916244367380500/widget.png?style=shield)
+[![Discord Chat](https://img.shields.io/discord/1013916244367380500.svg)](https://discord.gg/)  
 
 ## What's inside?
 
