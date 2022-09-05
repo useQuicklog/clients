@@ -2,9 +2,8 @@
   <img src="https://quicklog.io/quicklog-avatar.png" alt="Quicklog" width="300px"/>
   <h1>Quicklog</h1>
   <h4>This is the official client library for Quicklog.io</h4>
-  <img src="https://discordapp.com/api/guilds/1013916244367380500/widget.png?style=shield" alt="Discord Shield"/>
 </div>
-
+[![Discord](https://badgen.net/badge/icon/discord?icon=discord&label)](https://https://discord.com/)
 ## What's inside?
 
 This library is bundled with Turborepo and provides the following libraries to use with Quicklog:
