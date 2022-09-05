@@ -1,9 +1,9 @@
 <div align="center">
   <img src="https://quicklog.io/quicklog-avatar.png" alt="Quicklog" width="300px"/>
   <h1>Quicklog</h1>
+  <h4>This is the official client library for Quicklog.io</h4>
+	<a href="https://discord.gg/JWunpamH"><img src="https://img.shields.io/discord/1013916244367380500?color=%237289DA&label=Discord" alt="Discord" />
 </div>
-
-This is the official client library for Quicklog.io
 
 ## What's inside?
 
