@@ -12,16 +12,15 @@ export interface ClientOptions {
 
 interface MakeCreateClientDeps {
   fetch: typeof global.fetch
-  Headers: typeof global.Headers
 }
 
-export const makeCreateClient = ({ fetch, Headers }: MakeCreateClientDeps) => {
+export const makeCreateClient = ({ fetch }: MakeCreateClientDeps) => {
   function createClient (opts: ClientOptions): QuicklogClient {
 
-    const headers = new Headers({
+    const headers = {
       'Content-Type': 'application/json',
       'Authorization': `Bearer ${opts.token}`
-    })
+    }
 
     function event (data: EventData) {
       return fetch(URLS.event, {

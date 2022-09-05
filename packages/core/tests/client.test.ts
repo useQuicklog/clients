@@ -11,19 +11,19 @@ const options = {
 
 describe('Client', () => {
   it('creates client factory functions', () => {
-    const { createClient } = makeCreateClient({ fetch, Headers })
+    const { createClient } = makeCreateClient({ fetch })
     expect(createClient).toBeTruthy()
   })
 
   it('returns clients', () => {
-    const { createClient } = makeCreateClient({ fetch, Headers })
+    const { createClient } = makeCreateClient({ fetch })
     const client = createClient(options)
 
     expect(client).toHaveProperty('event')
   })
 
   it('calls event api url', () => {
-    const { createClient } = makeCreateClient({ fetch, Headers })
+    const { createClient } = makeCreateClient({ fetch })
     const client = createClient(options)
 
     const data: EventData = {
