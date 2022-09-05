@@ -2,7 +2,7 @@ import { EventData } from "./types"
 import { URLS } from "./urls"
 
 export interface QuicklogClient {
-  event: (data: EventData) => Promise<any>
+  event: (data: EventData) => Promise<unknown>
 }
 
 export interface ClientOptions {
@@ -22,12 +22,16 @@ export const makeCreateClient = ({ fetch }: MakeCreateClientDeps) => {
       'Authorization': `Bearer ${opts.token}`
     }
 
-    function event (data: EventData) {
-      return fetch(URLS.event, {
+    async function event (data: EventData) {
+      const res = await fetch(URLS.event, {
         method: 'POST',
         headers,
         body: JSON.stringify(data)
       })
+
+      if (!res.ok) throw new Error(res.statusText)
+
+      return res.json()
     }
 
     return {
