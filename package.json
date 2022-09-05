@@ -21,6 +21,5 @@
     "node": ">=14.0.0"
   },
   "packageManager": "npm@8.18.0",
-  "dependencies": {
-  }
+  "dependencies": {}
 }
