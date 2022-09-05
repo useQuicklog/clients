@@ -3,7 +3,9 @@
   <h1>Quicklog</h1>
   <h4>This is the official client library for Quicklog.io</h4>
 </div>
+
 [![Discord](https://badgen.net/badge/icon/discord?icon=discord&label)](https://https://discord.com/)
+
 ## What's inside?
 
 This library is bundled with Turborepo and provides the following libraries to use with Quicklog:
