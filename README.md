@@ -25,7 +25,7 @@ npm install --save @usequicklog/clients
 
 #### Import
 ```ts
-import { createClient } from '@usequicklog/clients';
+import { createClient } from '@usequicklog/node';
 ```
 
 #### Initialize
