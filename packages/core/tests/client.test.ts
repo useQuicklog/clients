@@ -1,6 +1,4 @@
-import { makeCreateClient } from '../src/client'
-import { EventData } from '../src/types'
-import { URLS } from '../src/urls'
+import { makeCreateClient, EventData, URLS } from '../src'
 
 const fetch = jest.fn()
 
